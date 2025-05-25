@@ -7,8 +7,6 @@ import FlowerParticles from '@/components/FlowerParticles';
 export default function Home() {
   return (
     <>
-      {/* Animated Background */}
-
       {/* Navigation Bar */}
       <nav className="sticky top-4 z-50 flex justify-center">
         <div className="bg-white/90 backdrop-blur-md shadow-md rounded-full px-6 py-2 flex gap-6 text-pink-700 font-medium">
@@ -20,10 +18,10 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative z-10 text-center py-20 bg-pink-50" id="intro">
-      <FlowerParticles />
+        <FlowerParticles />
         <h1 className="text-4xl md:text-5xl font-bold text-pink-700">
           <Typewriter
-            words={["Hi, I'm Priya 👩🏽‍💻", 'Welcome!']}
+            words={["Hi, I’m Priya 👩🏽‍💻", "Welcome!"]}
             loop
             cursor
             cursorStyle="|"
@@ -63,13 +61,13 @@ export default function Home() {
             </div>
             <div>
               <p className="text-pink-700 leading-relaxed">
-                Hello! I'm <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I'm passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
+                Hello! I’m <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I’m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it's working on class projects, building real-time apps at hackathons, or collaborating with peers, I'm always eager to learn and grow as a developer.
+                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it’s working on class projects, building real-time apps at hackathons, or collaborating with peers, I’m always eager to learn and grow as a developer.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I'm currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
+                I’m currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
               </p>
             </div>
           </div>
