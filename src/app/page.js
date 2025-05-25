@@ -1,103 +1,120 @@
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Navigation Bar */}
+      <nav className="sticky top-4 z-50 flex justify-center">
+        <div className="bg-white/90 backdrop-blur-md shadow-md rounded-full px-6 py-2 flex gap-6 text-pink-700 font-medium">
+          <a href="#about" className="hover:text-pink-500 transition">About</a>
+          <Link href="/projects" className="hover:text-pink-500 transition">Projects</Link>
+          <a href="#contact" className="hover:text-pink-500 transition">Contact</a>
         </div>
+      </nav>
+
+      {/* Typewriter Hero Section */}
+      <section className="text-center py-20 bg-pink-50" id="intro">
+        <h1 className="text-4xl md:text-5xl font-bold text-pink-700">
+          <Typewriter
+            words={["Hi, I'm Priya 👩🏽‍💻", "Welcome!"]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </h1>
+        <p className="text-pink-600 mt-3 text-lg">
+          A CS student passionate about AI, software engineering, and anything data!
+        </p>
+        <div className="mt-5">
+          <Link
+            href="/projects"
+            className="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-2 rounded-full transition"
+          >
+            See My Work
+          </Link>
+        </div>
+      </section>
+
+      <main className="bg-pink-50 min-h-screen p-8 font-sans scroll-smooth">
+        {/* About Me Section */}
+        <section id="about" className="bg-white p-6 rounded-2xl shadow-md mb-10 border border-pink-200">
+          <h2 className="text-2xl font-bold text-pink-700 mb-4">🌸 About Me</h2>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="relative w-48 h-48">
+              {/* Gradient Glow Background */}
+              <div className="absolute inset-0 rounded-full z-0 animate-pulse bg-gradient-to-r from-pink-200 via-pink-300 to-pink-400 blur-2xl opacity-70"></div>
+              <motion.img
+                src="/priyaportfolio.jpeg"
+                alt="Priya Mohan"
+                className="w-full h-full rounded-full border-4 border-white shadow-xl object-cover relative z-10"
+                initial={{ translateY: 0 }}
+                animate={{ translateY: [0, -10, 0, 10, 0] }}
+                transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity }}
+              />
+            </div>
+            <div>
+              <p className="text-pink-700 leading-relaxed">
+                Hello! I'm <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I’m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
+              </p>
+              <p className="text-pink-700 leading-relaxed mt-3">
+                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it’s working on class projects, building real-time apps at hackathons, or collaborating with peers, I'm always eager to learn and grow as a developer.
+              </p>
+              <p className="text-pink-700 leading-relaxed mt-3">
+                I'm currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
+              </p>
+            </div>
+          </div>
+
+          <hr className="my-6 border-pink-200" />
+
+          <div>
+            <h3 className="text-xl font-semibold text-pink-700 mb-2">🧰 Skills & Tools</h3>
+            <p className="text-pink-700">
+              Java • Python • JavaScript • React • Tailwind CSS • SQL • Git • Firebase • APIs • Next.js • GitHub
+            </p>
+          </div>
+
+          <hr className="my-6 border-pink-200" />
+
+          <div>
+            <h3 className="text-xl font-semibold text-pink-700 mb-2">💖 Fun Fact</h3>
+            <p className="text-pink-700">
+              I love creating cute UI designs, journaling, and teaching others—especially when I can blend creativity with code!
+            </p>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-4">
+            <a
+              href="mailto:priya.mohan11304@gmail.com"
+              className="inline-block bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full shadow-md font-medium transition-all"
+            >
+              💌 Contact Me
+            </a>
+            <a
+              href="/priya_resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border border-pink-500 text-pink-700 hover:bg-pink-100 px-6 py-2 rounded-full shadow-md font-medium transition-all"
+            >
+              📄 View Resume
+            </a>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact">
+          <footer className="text-center mt-12 text-pink-500">
+            <p>Made with 💗 and React • © 2025 Priya Mohan</p>
+          </footer>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
