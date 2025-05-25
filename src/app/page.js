@@ -61,13 +61,13 @@ export default function Home() {
             </div>
             <div>
               <p className="text-pink-700 leading-relaxed">
-                Hello! I'm <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I&apos;m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
+                Hello! I&apos;m <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I&apos;m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it&apos;s working on class projects, building real-time apps at hackathons, or collaborating with peers, I'm always eager to learn and grow as a developer.
+                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it&apos;s working on class projects, building real-time apps at hackathons, or collaborating with peers, I&apos;m always eager to learn and grow as a developer.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I'm currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
+                I&apos;m currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
               </p>
             </div>
           </div>
