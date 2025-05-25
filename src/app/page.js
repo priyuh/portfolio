@@ -84,7 +84,7 @@ export default function Home() {
           <div>
             <h3 className="text-xl font-semibold text-pink-700 mb-2">💖 Fun Fact</h3>
             <p className="text-pink-700">
-              I love creating cute UI designs, journaling, and teaching others—especially when I can blend creativity with code!
+              I love creating cute UI designs, playing video games, and teaching others—especially when I can blend creativity with code!
             </p>
           </div>
 
