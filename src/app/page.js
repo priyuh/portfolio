@@ -20,7 +20,7 @@ export default function Home() {
       <section className="text-center py-20 bg-pink-50" id="intro">
         <h1 className="text-4xl md:text-5xl font-bold text-pink-700">
           <Typewriter
-            words={[`Hi, I\'m Priya 👩🏽‍💻`, 'Welcome!']}
+            words={["Hi, I&#39;m Priya 👩🏽‍💻", "Welcome!"]}
             loop={true}
             cursor
             cursorStyle="|"
@@ -61,13 +61,13 @@ export default function Home() {
             </div>
             <div>
               <p className="text-pink-700 leading-relaxed">
-                Hello! I&apos;m <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I&apos;m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
+                Hello! I&#39;m <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I&#39;m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it&apos;s working on class projects, building real-time apps at hackathons, or collaborating with peers, I&apos;m always eager to learn and grow as a developer.
+                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it&#39;s working on class projects, building real-time apps at hackathons, or collaborating with peers, I&#39;m always eager to learn and grow as a developer.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I&apos;m currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
+                I&#39;m currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
               </p>
             </div>
           </div>
