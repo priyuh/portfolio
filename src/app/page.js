@@ -20,7 +20,7 @@ export default function Home() {
       <section className="text-center py-20 bg-pink-50" id="intro">
         <h1 className="text-4xl md:text-5xl font-bold text-pink-700">
           <Typewriter
-            words={["Hi, I&apos;m Priya 👩🏽‍💻", "Welcome!"]}
+            words={[`Hi, I\'m Priya 👩🏽‍💻`, 'Welcome!']}
             loop={true}
             cursor
             cursorStyle="|"

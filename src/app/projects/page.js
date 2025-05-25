@@ -33,7 +33,7 @@ export default function ProjectsPage() {
               transition={{ duration: 0.6, ease: 'easeOut' }}
             >
               <h3 className="text-xl font-semibold text-pink-700">🧬 Game of Life (Java)</h3>
-              <p className="text-pink-600 text-sm mt-1">Cellular automaton simulation based on Conway&apos;s Game of Life.</p>
+              <p className="text-pink-600 text-sm mt-1">Cellular automaton simulation based on Conway\'s Game of Life.</p>
               <p className="text-pink-800 mt-2">Built from scratch using Java and a custom DynamicArray. Features GUI, pattern loading, and simulation controls.</p>
               <div className="mt-4 flex gap-4">
                 <a
