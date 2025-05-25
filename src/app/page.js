@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 import Link from 'next/link';
@@ -20,7 +19,7 @@ export default function Home() {
       <section className="text-center py-20 bg-pink-50" id="intro">
         <h1 className="text-4xl md:text-5xl font-bold text-pink-700">
           <Typewriter
-            words={["Hi, I&#39;m Priya 👩🏽‍💻", "Welcome!"]}
+            words={["Hi, I'm Priya 👩🏽‍💻", "Welcome!"]}
             loop={true}
             cursor
             cursorStyle="|"
@@ -48,7 +47,6 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-pink-700 mb-4">🌸 About Me</h2>
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="relative w-48 h-48">
-              {/* Gradient Glow Background */}
               <div className="absolute inset-0 rounded-full z-0 animate-pulse bg-gradient-to-r from-pink-200 via-pink-300 to-pink-400 blur-2xl opacity-70"></div>
               <motion.img
                 src="/priyaportfolio.jpeg"
@@ -61,13 +59,13 @@ export default function Home() {
             </div>
             <div>
               <p className="text-pink-700 leading-relaxed">
-                Hello! I&#39;m <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I&#39;m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
+                Hello! I’m <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I’m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it&#39;s working on class projects, building real-time apps at hackathons, or collaborating with peers, I&#39;m always eager to learn and grow as a developer.
+                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it’s working on class projects, building real-time apps at hackathons, or collaborating with peers, I’m always eager to learn and grow as a developer.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I&#39;m currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
+                I’m currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
               </p>
             </div>
           </div>
