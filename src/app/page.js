@@ -1,11 +1,14 @@
 'use client';
-import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import FlowerParticles from '@/components/FlowerParticles';
 
 export default function Home() {
   return (
     <>
+      {/* Animated Background */}
+
       {/* Navigation Bar */}
       <nav className="sticky top-4 z-50 flex justify-center">
         <div className="bg-white/90 backdrop-blur-md shadow-md rounded-full px-6 py-2 flex gap-6 text-pink-700 font-medium">
@@ -15,12 +18,13 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Typewriter Hero Section */}
-      <section className="text-center py-20 bg-pink-50" id="intro">
+      {/* Hero Section */}
+      <section className="relative z-10 text-center py-20 bg-pink-50" id="intro">
+      <FlowerParticles />
         <h1 className="text-4xl md:text-5xl font-bold text-pink-700">
           <Typewriter
-            words={["Hi, I'm Priya 👩🏽‍💻", "Welcome!"]}
-            loop={true}
+            words={["Hi, I'm Priya 👩🏽‍💻", 'Welcome!']}
+            loop
             cursor
             cursorStyle="|"
             typeSpeed={80}
@@ -41,7 +45,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="bg-pink-50 min-h-screen p-8 font-sans scroll-smooth">
+      <main className="relative z-10 bg-pink-50 min-h-screen p-8 font-sans scroll-smooth">
         {/* About Me Section */}
         <section id="about" className="bg-white p-6 rounded-2xl shadow-md mb-10 border border-pink-200">
           <h2 className="text-2xl font-bold text-pink-700 mb-4">🌸 About Me</h2>
@@ -59,13 +63,13 @@ export default function Home() {
             </div>
             <div>
               <p className="text-pink-700 leading-relaxed">
-                Hello! I’m <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I’m passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
+                Hello! I'm <strong>Priya Mohan</strong>, a Computer Science student going into my senior year at George Mason University. I'm passionate about <strong>AI</strong>, <strong>software engineering</strong>, <strong>data science/analytics</strong>, and <strong>solutions engineering</strong>.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it’s working on class projects, building real-time apps at hackathons, or collaborating with peers, I’m always eager to learn and grow as a developer.
+                I enjoy using technology to solve real-world problems and create meaningful experiences. Whether it's working on class projects, building real-time apps at hackathons, or collaborating with peers, I'm always eager to learn and grow as a developer.
               </p>
               <p className="text-pink-700 leading-relaxed mt-3">
-                I’m currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
+                I'm currently seeking internships in software or data-focused roles where I can contribute, learn, and make an impact.
               </p>
             </div>
           </div>
@@ -84,7 +88,7 @@ export default function Home() {
           <div>
             <h3 className="text-xl font-semibold text-pink-700 mb-2">💖 Fun Fact</h3>
             <p className="text-pink-700">
-              I love creating cute UI designs, playing video games, and teaching others—especially when I can blend creativity with code!
+              I love creating cute UI designs, journaling, and teaching others—especially when I can blend creativity with code!
             </p>
           </div>
 
