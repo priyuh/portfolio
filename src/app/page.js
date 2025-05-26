@@ -46,7 +46,7 @@ export default function Home() {
       <main className="relative z-10 bg-pink-50 min-h-screen p-8 font-sans scroll-smooth">
         {/* About Me Section */}
         <section id="about" className="bg-white p-6 rounded-2xl shadow-md mb-10 border border-pink-200">
-          <h2 className="text-2xl font-bold text-pink-700 mb-4">🌸 About Me</h2>
+          <h2 className="text-2xl font-bold text-pink-700 mb-4">About Me</h2>
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="relative w-48 h-48">
               <div className="absolute inset-0 rounded-full z-0 animate-pulse bg-gradient-to-r from-pink-200 via-pink-300 to-pink-400 blur-2xl opacity-70"></div>
@@ -74,19 +74,126 @@ export default function Home() {
 
           <hr className="my-6 border-pink-200" />
 
-          <div>
-            <h3 className="text-xl font-semibold text-pink-700 mb-2">🧰 Skills & Tools</h3>
-            <p className="text-pink-700">
-              Java • Python • JavaScript • React • Tailwind CSS • SQL • Git • Firebase • APIs • Next.js • GitHub
-            </p>
-          </div>
+          {/* Skills Section with Animation */}
+          <section id="skills" className="text-center my-12">
+            <h3 className="text-2xl font-bold text-pink-700 mb-6">Skills & Tools</h3>
+            <div className="flex flex-wrap justify-center gap-10">
+              {[
+                { name: 'Java', src: '/java.png' },
+                { name: 'Python', src: '/python.png' },
+                { name: 'JavaScript', src: '/javascript.png' },
+                { name: 'React.js', src: '/react.png' },
+                { name: 'Tailwind', src: '/tailwind.png' },
+                { name: 'Firebase', src: '/firebase.png' },
+                { name: 'GitHub', src: '/github.png' },
+                { name: 'SQL', src: '/sql.png' },
+                { name: 'Next.js', src: '/nextjs.png' },
+              ].map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  className="flex flex-col items-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                >
+                  <img src={skill.src} alt={skill.name} className="w-12 h-12" />
+                  <span className="mt-2 text-pink-700 text-sm">{skill.name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+          <hr className="my-12 border-pink-200 w-full mx-auto" />
+
+
+          <section id="timeline" className="my-20">
+            <h3 className="text-2xl font-bold text-pink-700 text-center mb-6">My Journey</h3>
+
+            <div className="relative max-w-5xl mx-auto pl-14">
+              {/* Vertical line animation */}
+              <motion.div
+                initial={{ height: 0 }}
+                whileInView={{ height: '100%' }}
+                transition={{ duration: 1, ease: 'easeInOut' }}
+                className="absolute left-0 top-0 w-1.5 bg-pink-300 rounded-full"
+                style={{ zIndex: 0 }}
+              />
+
+              {[
+                {
+                  date: 'Oct 2024 – Present',
+                  title: 'STEM Instructor – Stem Excel',
+                  icon: '/stemexcel.png',
+                  description: 'Teaching K-8 students engaging STEM curriculum weekly, such as Intro to Computer Science & Robotics',
+                },
+                {
+                  date: 'Apr – Aug 2024',
+                  title: 'STEM Instructor – Stem Tree',
+                  icon: '/stemtree.png',
+                  description: 'Taught children between K-8 diverse subjects including math, coding, science, electrical engineering, etc.',
+                },
+                {
+                  date: 'August 2022',
+                  title: 'Started George Mason University',
+                  icon: '/georgemason.png',
+                  description: 'B.S. in Computer Science, with a focus in AI and Software Engineering.',
+                },
+                {
+                  date: 'June 2022',
+                  title: 'Graduated High School',
+                  icon: '/highschool.png',
+                  description: 'Graduated magna cum laude with a GPA of 3.9, took programming and robotics courses',
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="relative mb-20 flex items-center justify-between"
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 top-2 w-6 h-6 bg-pink-500 rounded-full shadow-lg z-10" />
+
+                  {/* Text */}
+                  <div className="ml-10 flex-1 pr-8">
+                    <p className="text-base text-pink-500 font-medium">{item.date}</p>
+                    <h4 className="text-2xl font-semibold text-pink-700 mt-1">{item.title}</h4>
+                    <p className="text-base text-pink-600 mt-1">{item.description}</p>
+                  </div>
+
+                  {/* Icon */}
+                  <motion.img
+                    src={item.icon}
+                    alt={item.title}
+                    className="w-20 h-20 object-contain drop-shadow-md"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 20, delay: index * 0.2 }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+
+
+
+
+
+
+
+
 
           <hr className="my-6 border-pink-200" />
 
           <div>
             <h3 className="text-xl font-semibold text-pink-700 mb-2">💖 Fun Fact</h3>
             <p className="text-pink-700">
-              I love creating cute UI designs, journaling, and teaching others—especially when I can blend creativity with code!
+              I love creating cute UI designs, playing video games, and teaching others—especially when I can blend creativity with code!
             </p>
           </div>
 
