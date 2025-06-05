@@ -1,10 +1,14 @@
 'use client';
+import React, { useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import FlowerParticles from '@/components/FlowerParticles';
 
 export default function Home() {
+  const [showGames, setShowGames] = useState(false);
+  const [showMoreFacts, setShowMoreFacts] = useState(false);
+
   return (
     <>
       {/* Navigation Bar */}
@@ -107,10 +111,9 @@ export default function Home() {
 
           <hr className="my-12 border-pink-200 w-full mx-auto" />
 
-
+          {/* Timeline Section */}
           <section id="timeline" className="my-20">
             <h3 className="text-2xl font-bold text-pink-700 text-center mb-6">My Journey</h3>
-
             <div className="relative max-w-5xl mx-auto pl-14">
               {/* Vertical line animation */}
               <motion.div
@@ -120,7 +123,6 @@ export default function Home() {
                 className="absolute left-0 top-0 w-1.5 bg-pink-300 rounded-full"
                 style={{ zIndex: 0 }}
               />
-
               {[
                 {
                   date: 'Oct 2024 – Present',
@@ -179,22 +181,71 @@ export default function Home() {
             </div>
           </section>
 
-
-
-
-
-
-
-
-
-
           <hr className="my-6 border-pink-200" />
 
+          {/* Fun Facts Section with Expandables */}
           <div>
-            <h3 className="text-xl font-semibold text-pink-700 mb-2">💖 Fun Fact</h3>
-            <p className="text-pink-700">
-              I love creating cute UI designs, playing video games, and teaching others—especially when I can blend creativity with code!
-            </p>
+            <h3 className="text-xl font-semibold text-pink-700 mb-2">Fun Facts</h3>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-pink-700 mb-2"
+            >
+              I love creating <span className="text-pink-500 font-medium">cute UI designs</span> and <span className="text-pink-500 font-medium">playing cozy games</span>.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-pink-700 mb-4"
+            >
+              Most of all, I love <span className="text-pink-500 font-medium">teaching and empowering others</span> with creativity + code 💻✨
+            </motion.p>
+
+            {/* Toggle buttons */}
+            <div className="flex flex-wrap gap-4 mb-6">
+              <button
+                onClick={() => setShowGames(!showGames)}
+                className="bg-pink-200 hover:bg-pink-300 text-pink-700 px-4 py-2 rounded-full transition"
+              >
+                {showGames ? 'Hide Games 🎮' : 'See Games 🎮'}
+              </button>
+              <button
+                onClick={() => setShowMoreFacts(!showMoreFacts)}
+                className="bg-pink-200 hover:bg-pink-300 text-pink-700 px-4 py-2 rounded-full transition"
+              >
+                {showMoreFacts ? 'Hide More Fun Facts 💫' : 'More Fun Facts 💫'}
+              </button>
+            </div>
+
+            {/* Games List */}
+            {showGames && (
+              <motion.ul
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                transition={{ duration: 0.4 }}
+                className="list-disc pl-6 mb-6 text-pink-700"
+              >
+                <li>Stardew Valley</li>
+                <li>Animal Crossing: New Horizons</li>
+                <li>Spiritfarer</li>
+                <li>Cozy Grove</li>
+              </motion.ul>
+            )}
+
+            {/* More Fun Facts */}
+            {showMoreFacts && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                transition={{ duration: 0.4 }}
+                className="text-pink-700"
+              >
+                <p>📺 Currently Watching: “Ted Lasso”, “The Mandalorian”</p>
+                <p>🎵 Favorite Song Right Now: “Sunflower” by Post Malone & Swae Lee</p>
+              </motion.div>
+            )}
           </div>
 
           <div className="mt-6 flex flex-wrap gap-4">
